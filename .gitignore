@@ -1,0 +1,4 @@
+mta_archives/
+
+# auto generated wildcard
+dbshare/.env

@@ -1,0 +1,8 @@
+{
+	"COVID_STATS" : {
+    	"target": {
+    		"schema.configure": "dwcshare/schema",
+    		"object": "COVID_STATS"
+    	}
+	}
+}

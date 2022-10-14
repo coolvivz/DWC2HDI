@@ -1,0 +1,14 @@
+{
+  "role": {
+    "name": "DWC_CONSUMPTION_ROLE",
+    "object_privileges": [
+      {
+        "name": "cv_test",
+        "type": "VIEW",
+        "privileges": [
+          "SELECT"
+        ]
+      }
+    ]
+  }
+}

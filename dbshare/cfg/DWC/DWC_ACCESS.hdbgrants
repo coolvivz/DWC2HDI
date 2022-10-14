@@ -1,0 +1,17 @@
+{
+	"dwcshare": {
+		"object_owner": {
+			"roles": [],
+			"container_roles": [],
+			"object_privileges": [
+				{
+				  "type": "VIEW",
+				  "name": "COVID_STATS",
+				  "privileges_with_grant_option": [
+				    "SELECT"
+				  ]
+				}
+			]
+		}
+	}
+}

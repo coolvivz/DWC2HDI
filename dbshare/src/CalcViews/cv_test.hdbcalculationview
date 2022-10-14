@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="cv_test" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="cv_test"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="COVID_STATS">
+    <resourceUri>COVID_STATS</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="province_state"/>
+      <viewAttribute id="country_region"/>
+      <viewAttribute id="date"/>
+      <viewAttribute id="confirmed"/>
+      <viewAttribute id="deaths"/>
+      <viewAttribute id="latitude"/>
+      <viewAttribute id="recovered"/>
+      <viewAttribute id="longitude"/>
+      <viewAttribute id="active"/>
+      <viewAttribute id="fips"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="COVID_STATS"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="country_region" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="country_region"/>
+      <keyMapping columnObjectName="Projection_1" columnName="country_region"/>
+    </attribute>
+    <attribute id="country_region_1" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="country_region"/>
+      <keyMapping columnObjectName="Projection_1" columnName="country_region"/>
+    </attribute>
+    <attribute id="date" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="date"/>
+      <keyMapping columnObjectName="Projection_1" columnName="date"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="confirmed" order="1" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="confirmed"/>
+      <measureMapping columnObjectName="Projection_1" columnName="confirmed"/>
+    </measure>
+    <measure id="deaths" order="2" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="deaths"/>
+      <measureMapping columnObjectName="Projection_1" columnName="deaths"/>
+    </measure>
+    <measure id="recovered" order="3" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="recovered"/>
+      <measureMapping columnObjectName="Projection_1" columnName="recovered"/>
+    </measure>
+    <measure id="active" order="4" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="active"/>
+      <measureMapping columnObjectName="Projection_1" columnName="active"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="6" y="224"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

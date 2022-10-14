@@ -1,0 +1,30 @@
+_schema-version: "2.1"
+ID: dwcinstshare
+version: 0.0.1
+modules:
+- name: dbshare
+  type: hdb
+  path: dbshare
+  requires:
+  - name: hdi_dbshare
+    properties:
+      TARGET_CONTAINER: ~{hdi-container-name}
+  - name: cross-container-service-2
+    group: SERVICE_REPLACEMENTS
+    properties:
+      key: ServiceName_2
+      service: ~{the-service-name}
+resources:
+- name: hdi_dbshare
+  type: com.sap.xs.hdi-container
+  parameters:
+    config:
+      schema: instnew
+  properties:
+    hdi-container-name: ${service-name}
+- name: cross-container-service-2
+  type: org.cloudfoundry.existing-service
+  parameters:
+    service-name: dwcshare
+  properties:
+    the-service-name: ${service-name}
