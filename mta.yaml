@@ -19,7 +19,7 @@ resources:
   type: com.sap.xs.hdi-container
   parameters:
     config:
-      schema: instnew
+      schema: CROSSBTP
   properties:
     hdi-container-name: ${service-name}
 - name: cross-container-service-2
